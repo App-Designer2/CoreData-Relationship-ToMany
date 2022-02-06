@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="liked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="commentToMedia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Media" inverseName="mediaToComment" inverseEntity="Media"/>
+        <relationship name="commentToSocial" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Social" inverseName="socialToComment" inverseEntity="Social"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Media" representedClassName="Media" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="mediaToComment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="commentToMedia" inverseEntity="Comment"/>
+        <relationship name="mediaToSocial" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Social" inverseName="socialToMedia" inverseEntity="Social"/>
+    </entity>
+    <entity name="Social" representedClassName="Social" syncable="YES">
+        <attribute name="about" optional="YES" attributeType="String"/>
+        <attribute name="avatar" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="comentario" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageD" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="socialToComment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="commentToSocial" inverseEntity="Comment"/>
+        <relationship name="socialToMedia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Media" inverseName="mediaToSocial" inverseEntity="Media"/>
+    </entity>
+    <elements>
+        <element name="Comment" positionX="-63" positionY="54" width="128" height="119"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Media" positionX="-63" positionY="-9" width="128" height="89"/>
+        <element name="Social" positionX="-54" positionY="9" width="128" height="164"/>
+    </elements>
+</model>
