@@ -1,0 +1,2 @@
+# CoreData-Relationship-ToMany
+On these code you will learn how to relation 2 or more entities on CoreData by also relate relationship To Many, you will be able to create an app saving all the data on your physical device and only you will have access to them: [ ImagePicker, pure CoreData, PHPhotoPicker allows us to choose multiple photos at the same time, LottieAnimation. etc, etc ] I hope you like enjoy.
